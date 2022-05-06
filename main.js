@@ -136,3 +136,46 @@ getEle("btnNguyenTo").onclick = function () {
     }
     getEle("footerBai8").innerHTML = ketQua8;
 }
+
+function checkSoNguyen(o) {
+    return Number.isInteger(o);
+}
+
+getEle('btnDemSoNguyen').onclick = function () {
+    var arr9 = arrNumber;
+    // var ketQua9 = '';
+    var count9 = 0;
+    for (p = 0; p <= arr9.length - 1; p++) {
+        var phanTu9 = arr9[p];
+        var SoNguyen = checkSoNguyen(phanTu9);
+        if (SoNguyen) {
+            count9++;
+        } 
+    }
+    getEle('footerBai9').innerHTML = 'Số nguyên: ' + count9;
+}
+
+getEle('btnSoSanhDuongAm').onclick = function () {
+    var arr10 = arrNumber;
+    var countDuong = 0;
+    var countAm = 0;
+    var ketQua10 = '';
+    for (q = 0; q <= arr10.length - 1; q++) {
+        var phanTu10 = arr10[q];
+        if (phanTu10 > 0) {
+            countDuong++;
+        } else if (phanTu10 < 0) {
+            countAm++;
+        }
+    }
+
+    if (countDuong === countAm) {
+        ketQua10 = 'Số dương = Số âm';
+    } else if (countDuong > countAm) {
+        ketQua10 = 'Số dương > Số âm';
+    } else {
+        ketQua10 = 'Số dương < Số âm';
+    }
+    getEle('footerBai10').innerHTML = ketQua10;
+}
+
