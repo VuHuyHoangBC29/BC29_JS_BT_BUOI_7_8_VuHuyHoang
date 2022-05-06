@@ -96,3 +96,43 @@ getEle('btnDaoViTri').onclick = function () {
     // arr6[viTri2] = giaTri1;
     getEle('footerBai6').innerHTML = "Mảng sau khi đổi: " + arr6;
 }
+
+getEle('btnTangDan').onclick = function () {
+    var arr7 = arrNumber;
+    var ketQua7 = arr7.sort(function (b, a) {
+        return b - a;
+    });
+    getEle('footerBai7').innerHTML = "Mảng theo thứ tự tăng dần: " + ketQua7;
+}
+
+function xetSoNguyenTo(m) {
+    var count = 0;
+    for (n = 1; n <= m; n++) {
+        if (m % n === 0) {
+            count += 1;
+        } else {
+            count += 0;
+        }
+    }
+    return count;
+}
+
+getEle("btnNguyenTo").onclick = function () {
+    var arr8 = arrNumber;
+    var soNguyenToDauTien = -1;
+    var ketQua8 = "";
+    for (z = 0; z <= arr8.length - 1; z++) {
+        var phanTu8 = arr8[z];
+        var soNguyenTo = xetSoNguyenTo(phanTu8);
+        if (soNguyenTo <= 2) {
+            soNguyenToDauTien = phanTu8;
+            break;
+        }
+    }
+    if (soNguyenToDauTien !== -1) {
+        ketQua8 = 'Số nguyên tố đầu tiên là: ' + soNguyenToDauTien;
+    } else {
+        ketQua8 = 'Không tìm thấy số nguyên tố'
+    }
+    getEle("footerBai8").innerHTML = ketQua8;
+}
