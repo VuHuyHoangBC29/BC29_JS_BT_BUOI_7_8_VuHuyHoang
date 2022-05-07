@@ -124,7 +124,7 @@ getEle("btnNguyenTo").onclick = function () {
     for (z = 0; z <= arr8.length - 1; z++) {
         var phanTu8 = arr8[z];
         var soNguyenTo = xetSoNguyenTo(phanTu8);
-        if (soNguyenTo <= 2) {
+        if (phanTu8 !== 1 && phanTu8 >0 && soNguyenTo <= 2) {
             soNguyenToDauTien = phanTu8;
             break;
         }
